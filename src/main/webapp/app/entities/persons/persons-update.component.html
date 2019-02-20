@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-persons-heading" jhiTranslate="jHipsterApp.persons.home.createOrEditLabel">Create or edit a Persons</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!persons.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="persons.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.firstName" for="field_firstName" [ngbTooltip]="'jHipsterApp.persons.help.firstName' | translate">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="persons.firstName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="persons.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="persons.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                        [(ngModel)]="persons.phoneNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.arrivalDate" for="field_arrivalDate">Arrival Date</label>
+                    <div class="input-group">
+                        <input id="field_arrivalDate" type="text" class="form-control" name="arrivalDate" ngbDatepicker  #arrivalDateDp="ngbDatepicker" [(ngModel)]="persons.arrivalDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="arrivalDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.residencyStatus" for="field_residencyStatus">Residency Status</label>
+                    <input type="checkbox" class="form-control" name="residencyStatus" id="field_residencyStatus"
+                        [(ngModel)]="persons.residencyStatus" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.document" for="field_document">Document</label>
+                    <input type="text" class="form-control" name="document" id="field_document"
+                        [(ngModel)]="persons.document" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="persons.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.nacionality" for="field_nacionality">Nacionality</label>
+                    <input type="text" class="form-control" name="nacionality" id="field_nacionality"
+                        [(ngModel)]="persons.nacionality" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.documentType" for="field_documentType">Document Type</label>
+                    <select class="form-control" id="field_documentType" name="documentType" [(ngModel)]="persons.documentType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="documentTypeOption.id === persons.documentType?.id ? persons.documentType : documentTypeOption" *ngFor="let documentTypeOption of documenttypes; trackBy: trackDocumentTypeById">{{documentTypeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.genre" for="field_genre">Genre</label>
+                    <select class="form-control" id="field_genre" name="genre" [(ngModel)]="persons.genre">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="genreOption.id === persons.genre?.id ? persons.genre : genreOption" *ngFor="let genreOption of genres; trackBy: trackGenreById">{{genreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.country" for="field_country">Country</label>
+                    <select class="form-control" id="field_country" name="country" [(ngModel)]="persons.country">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="countryOption.id === persons.country?.id ? persons.country : countryOption" *ngFor="let countryOption of countries; trackBy: trackCountryById">{{countryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.region" for="field_region">Region</label>
+                    <select class="form-control" id="field_region" name="region" [(ngModel)]="persons.region">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="regionOption.id === persons.region?.id ? persons.region : regionOption" *ngFor="let regionOption of regions; trackBy: trackRegionById">{{regionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jHipsterApp.persons.location" for="field_location">Location</label>
+                    <select class="form-control" id="field_location" name="location" [(ngModel)]="persons.location">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationOption.id === persons.location?.id ? persons.location : locationOption" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="jHipsterApp.persons.habilities" for="field_habilities">Habilities</label>
+                    <select class="form-control" id="field_habilities" multiple name="habilities" [(ngModel)]="persons.habilities">
+                        <option [ngValue]="getSelected(persons.habilities, habilitiesOption)" *ngFor="let habilitiesOption of habilities; trackBy: trackHabilitiesById">{{habilitiesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

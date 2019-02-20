@@ -1,0 +1,23 @@
+{
+    "jHipsterApp": {
+        "habilities": {
+            "home": {
+                "title": "Habilities",
+                "createLabel": "Create a new Habilities",
+                "createOrEditLabel": "Create or edit a Habilities",
+                "search": "Search for Habilities"
+            },
+            "created": "A new Habilities is created with identifier {{ param }}",
+            "updated": "A Habilities is updated with identifier {{ param }}",
+            "deleted": "A Habilities is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Habilities {{ id }}?"
+            },
+            "detail": {
+                "title": "Habilities"
+            },
+            "title": "Title",
+            "description": "Description"
+        }
+    }
+}

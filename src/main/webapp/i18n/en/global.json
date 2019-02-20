@@ -8,6 +8,13 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "region": "Region",
+                "country": "Country",
+                "location": "Location",
+                "habilities": "Habilities",
+                "persons": "Persons",
+                "documentType": "Document Type",
+                "genre": "Genre",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
