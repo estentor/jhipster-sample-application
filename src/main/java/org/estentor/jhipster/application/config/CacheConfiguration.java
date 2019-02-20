@@ -41,6 +41,14 @@ public class CacheConfiguration {
             cm.createCache(org.estentor.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(org.estentor.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(org.estentor.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Region.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Country.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Location.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Habilities.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Persons.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Persons.class.getName() + ".habilities", jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.DocumentType.class.getName(), jcacheConfiguration);
+            cm.createCache(org.estentor.jhipster.application.domain.Genre.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

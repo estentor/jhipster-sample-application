@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Persons.
+    -->
+    <changeSet id="20190220175530-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="document_type_id"
+                                 baseTableName="persons"
+                                 constraintName="fk_persons_document_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="genre_id"
+                                 baseTableName="persons"
+                                 constraintName="fk_persons_genre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="genre"/>
+
+        <addForeignKeyConstraint baseColumnNames="country_id"
+                                 baseTableName="persons"
+                                 constraintName="fk_persons_country_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="country"/>
+
+        <addForeignKeyConstraint baseColumnNames="region_id"
+                                 baseTableName="persons"
+                                 constraintName="fk_persons_region_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="region"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="persons"
+                                 constraintName="fk_persons_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="persons_id"
+                                 baseTableName="persons_habilities"
+                                 constraintName="fk_persons_habilities_persons_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persons"/>
+        <addForeignKeyConstraint baseColumnNames="habilities_id"
+                                 baseTableName="persons_habilities"
+                                 constraintName="fk_persons_habilities_habilities_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="habilities"/>
+        
+    </changeSet>
+</databaseChangeLog>

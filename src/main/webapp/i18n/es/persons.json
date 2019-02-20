@@ -1,0 +1,39 @@
+{
+    "jHipsterApp": {
+        "persons": {
+            "home": {
+                "title": "Persons",
+                "createLabel": "Crear nuevo Persons",
+                "createOrEditLabel": "Crear o editar Persons",
+                "search": "Search for Persons"
+            },
+            "created": "Un nuevo Persons ha sido creado con el identificador {{ param }}",
+            "updated": "Un Persons ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Persons ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Persons {{ id }}?"
+            },
+            "detail": {
+                "title": "Persons"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "arrivalDate": "Arrival Date",
+            "residencyStatus": "Residency Status",
+            "document": "Document",
+            "address": "Address",
+            "nacionality": "Nacionality",
+            "documentType": "Document Type",
+            "genre": "Genre",
+            "country": "Country",
+            "region": "Region",
+            "location": "Location",
+            "habilities": "Habilities",
+            "help": {
+                "firstName": "The firstname attribute."
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "jHipsterApp": {
+        "documentType": {
+            "home": {
+                "title": "Document Types",
+                "createLabel": "Crear nuevo Document Type",
+                "createOrEditLabel": "Crear o editar Document Type",
+                "search": "Search for Document Type"
+            },
+            "created": "Un nuevo Document Type ha sido creado con el identificador {{ param }}",
+            "updated": "Un Document Type ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Document Type ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Document Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Document Type"
+            },
+            "description": "Description",
+            "persons": "Persons"
+        }
+    }
+}

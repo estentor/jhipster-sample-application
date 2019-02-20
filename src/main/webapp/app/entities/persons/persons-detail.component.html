@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="persons">
+            <h2><span jhiTranslate="jHipsterApp.persons.detail.title">Persons</span> {{persons.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jHipsterApp.persons.firstName" [ngbTooltip]="'jHipsterApp.persons.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{persons.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{persons.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.email">Email</span></dt>
+                <dd>
+                    <span>{{persons.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{persons.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.arrivalDate">Arrival Date</span></dt>
+                <dd>
+                    <span>{{persons.arrivalDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.residencyStatus">Residency Status</span></dt>
+                <dd>
+                    <span>{{persons.residencyStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.document">Document</span></dt>
+                <dd>
+                    <span>{{persons.document}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.address">Address</span></dt>
+                <dd>
+                    <span>{{persons.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.nacionality">Nacionality</span></dt>
+                <dd>
+                    <span>{{persons.nacionality}}</span>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.documentType">Document Type</span></dt>
+                <dd>
+                    <div *ngIf="persons.documentType">
+                        <a [routerLink]="['/document-type', persons.documentType?.id, 'view']">{{persons.documentType?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.genre">Genre</span></dt>
+                <dd>
+                    <div *ngIf="persons.genre">
+                        <a [routerLink]="['/genre', persons.genre?.id, 'view']">{{persons.genre?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="persons.country">
+                        <a [routerLink]="['/country', persons.country?.id, 'view']">{{persons.country?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.region">Region</span></dt>
+                <dd>
+                    <div *ngIf="persons.region">
+                        <a [routerLink]="['/region', persons.region?.id, 'view']">{{persons.region?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="persons.location">
+                        <a [routerLink]="['/location', persons.location?.id, 'view']">{{persons.location?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jHipsterApp.persons.habilities">Habilities</span></dt>
+                <dd>
+                    <span *ngFor="let habilities of persons.habilities; let last = last">
+                        <a [routerLink]="['/habilities', habilities?.id, 'view' ]">{{habilities.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/persons', persons.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
