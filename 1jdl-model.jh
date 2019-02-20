@@ -1,0 +1,94 @@
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Habilities {
+	title String,
+	description String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Persons {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	arrivalDate LocalDate,
+    residencyStatus Boolean, 
+    document String, 
+    documentType DocumentType,
+    address String,
+    nacionality String,
+    genre Genre,
+    location Location,
+    country Country,
+    region Region
+}
+entity DocumentType{
+	description String
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+entity Genre{
+	description String
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Persons to DocumentType
+	Persons to Genre
+    Persons to Country
+    Persons to Region
+    Persons to Location
+}
+
+relationship ManyToMany {
+	Persons{Habilities} to Habilities
+}
+
+// defining multiple OneToMany relationships with comments
+
+
+
+// Set pagination options
+paginate Habilities with pagination
+paginate Persons with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
